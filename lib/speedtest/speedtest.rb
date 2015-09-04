@@ -1,5 +1,6 @@
 require 'mechanize'
 require 'nokogiri'
+require 'colorize'
 
 module Speedtest
 	class GeoPoint
@@ -47,9 +48,9 @@ module Speedtest
 			latency = server[:latency]
 			puts "Server #{@server_root}"
 			downRate = download
-			puts "Download: #{pretty_speed downRate}"
+			puts "Download: #{pretty_speed downRate}".green
 			upRate = upload
-			puts "Upload: #{pretty_speed upRate}"
+			puts "Upload: #{pretty_speed upRate}".green
 			{:server => @server_root, :latency => latency, :downRate => downRate, :upRate => upRate}
 		end
 
